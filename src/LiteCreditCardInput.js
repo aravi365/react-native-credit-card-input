@@ -146,15 +146,16 @@ export default class LiteCreditCardInput extends Component {
       <View style={s.container}>
         <View style={[
           s.leftPart,
-          showRightPart ? s.hidden : s.expanded,
+          showRightPart ? s.hidden : s.expanded,{flexDirection:'row'}
         ]}>
+      <TouchableOpacity onPress={showRightPart ? this._focusNumber : this._focusExpiry }>
+          <Image style={s.icon} source={Icons[this._iconToShow()]} />
+        </TouchableOpacity>
           <CCInput {...this._inputProps("number")}
             keyboardType="numeric"
             containerStyle={s.numberInput} />
         </View>
-        <TouchableOpacity onPress={showRightPart ? this._focusNumber : this._focusExpiry }>
-          <Image style={s.icon} source={Icons[this._iconToShow()]} />
-        </TouchableOpacity>
+        
         <View style={[
           s.rightPart,
           showRightPart ? s.expanded : s.hidden,
