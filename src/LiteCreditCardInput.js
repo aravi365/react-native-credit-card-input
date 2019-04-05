@@ -48,6 +48,7 @@ const s = StyleSheet.create({
   },
   numberInput: {
     width: INFINITE_WIDTH,
+    marginLeft: 10
   },
   expiryInput: {
     width: 80,
